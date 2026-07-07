@@ -68,6 +68,7 @@ nav a:hover,nav a:focus{color:var(--char);border-color:var(--gold)}
     radial-gradient(ellipse at 15% 0%,rgba(232,201,188,.5),transparent 55%),
     radial-gradient(ellipse at 90% 100%,rgba(201,173,122,.35),transparent 50%),
     var(--cream);
+  overflow:hidden;
 }
 .std-card::after{
   content:"";position:absolute;inset:10px;border:1px solid rgba(176,141,79,.4);pointer-events:none;
@@ -114,6 +115,18 @@ nav a:hover,nav a:focus{color:var(--char);border-color:var(--gold)}
 .stamp.br{bottom:24px;right:26px}
 @media(max-width:560px){.stamp{display:none}}
 
+/* ---------- hero photo strip (added) ---------- */
+.hero-photo-strip{
+  position:relative;z-index:1;display:flex;gap:.9rem;justify-content:center;
+  margin:0 auto 2.2rem;max-width:720px;flex-wrap:wrap;
+}
+.hero-photo-strip img{
+  width:calc(33.333% - .6rem);height:190px;object-fit:cover;
+  border:1px solid var(--line);filter:sepia(.12) saturate(1.05);
+  box-shadow:0 10px 24px rgba(43,38,34,.15);
+}
+@media(max-width:640px){.hero-photo-strip img{width:calc(50% - .45rem);height:150px}}
+
 /* ---------- shared section shells ---------- */
 section{padding:clamp(3.5rem,9vw,7rem) 1.4rem}
 .wrap{max-width:1100px;margin:0 auto}
@@ -136,9 +149,11 @@ h2 em{font-style:italic;font-weight:400}
   border:1px solid var(--line);padding:2rem;background:var(--cream-deep);position:relative;
   transform:rotate(-1.2deg);
 }
-.about-frame figure{border:1px solid rgba(176,141,79,.45);aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse at 50% 30%,rgba(232,201,188,.6),transparent 70%),var(--cream)}
+.about-frame figure{border:1px solid rgba(176,141,79,.45);aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse at 50% 30%,rgba(232,201,188,.6),transparent 70%),var(--cream);overflow:hidden;position:relative}
 .about-frame svg{width:60%;height:auto;color:var(--blush-deep)}
 .about-frame figcaption{margin-top:1rem;text-align:center;font-family:'Nothing You Could Do',cursive;font-size:1.1rem;color:var(--char-soft)}
+.about-photo{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;filter:sepia(.1) saturate(1.05)}
+.about-photo + svg{position:relative;z-index:1;display:none}
 .about p{margin-bottom:1.1rem;max-width:56ch}
 .about .lead{font-size:1.35rem;font-style:italic;color:var(--char-soft)}
 .rating-line{
@@ -170,6 +185,10 @@ h2 em{font-style:italic;font-weight:400}
 .moments p{color:rgba(247,241,232,.75);max-width:60ch;font-size:1.05rem}
 .moments .tag{
   display:inline-block;margin-top:.5rem;font-size:.7rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-soft);
+}
+.moments .moment-photo{
+  width:100%;max-width:220px;height:140px;object-fit:cover;margin-top:1rem;
+  border:1px solid rgba(247,241,232,.25);filter:sepia(.08) saturate(1.05);
 }
 
 /* ---------- experience ---------- */
@@ -241,6 +260,11 @@ footer .credit{margin-top:1rem;font-size:.78rem;opacity:.65}
   <div class="std-card">
     <span class="stamp tl" aria-hidden="true">Est. — Chicago Area</span>
     <span class="stamp br" aria-hidden="true">By Invitation</span>
+    <div class="hero-photo-strip">
+      <img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?fm=jpg&q=60&w=3000&auto=format&fit=crop" alt="Bride and groom sharing a quiet moment">
+      <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?fm=jpg&q=60&w=3000&auto=format&fit=crop" alt="Wedding couple portrait in golden light">
+      <img src="https://images.unsplash.com/photo-1617724975854-70b5d0cedb0a?fm=jpg&q=60&w=3000&auto=format&fit=crop" alt="Wedding rings and details">
+    </div>
     <p class="std-eyebrow">Kindly save the date</p>
     <h1>The two of you.<br><em>One honest album.</em></h1>
     <p class="names script" aria-hidden="true">your names here</p>
@@ -261,6 +285,7 @@ footer .credit{margin-top:1rem;font-size:.78rem;opacity:.65}
   <div class="wrap reveal">
     <div class="about-frame">
       <figure>
+        <img class="about-photo" src="https://images.unsplash.com/photo-1611550287705-7ff8b459c8eb?fm=jpg&q=60&w=3000&auto=format&fit=crop" alt="Photographer's portrait behind the scenes at a wedding">
         <svg viewBox="0 0 200 200" role="img" aria-label="Illustration of a film camera surrounded by two wedding rings">
           <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round">
             <rect x="45" y="70" width="110" height="75" rx="8"/>
@@ -305,6 +330,8 @@ footer .credit{margin-top:1rem;font-size:.78rem;opacity:.65}
           <h3>The engagement session <span>— before the day</span></h3>
           <p>A relaxed session, somewhere that means something to you two. It's how we get comfortable together — so on the wedding day the camera already feels like a friend, not a stranger.</p>
           <span class="tag">Engagement Sessions</span>
+          <br>
+          <img class="moment-photo" src="https://images.unsplash.com/photo-1654553051254-45493cd4daf3?fm=jpg&q=60&w=3000&auto=format&fit=crop" alt="Engaged couple during a relaxed outdoor session">
         </div>
       </li>
       <li>
@@ -313,6 +340,8 @@ footer .credit{margin-top:1rem;font-size:.78rem;opacity:.65}
           <h3>Full wedding day coverage <span>— getting ready to goodnight</span></h3>
           <p>Documentary-first coverage of the whole day: the quiet nerves in the morning, the ceremony, the toasts, the dance floor once the candles are low. I stay present and out of the way.</p>
           <span class="tag">Wedding Day Photography</span>
+          <br>
+          <img class="moment-photo" src="https://images.unsplash.com/photo-1503525443530-339273ca8a86?fm=jpg&q=60&w=3000&auto=format&fit=crop" alt="Wedding ceremony in progress">
         </div>
       </li>
       <li>
@@ -321,6 +350,8 @@ footer .credit{margin-top:1rem;font-size:.78rem;opacity:.65}
           <h3>Bridal &amp; couple portraits <span>— the frames on the wall</span></h3>
           <p>A carved-out stretch of golden light, just the two of you. Gently directed, never stiff — these are the images your family will ask for prints of.</p>
           <span class="tag">Bridal / Couple Portraits</span>
+          <br>
+          <img class="moment-photo" src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?fm=jpg&q=60&w=3000&auto=format&fit=crop" alt="Couple portrait in golden hour light">
         </div>
       </li>
       <li>
@@ -329,6 +360,8 @@ footer .credit{margin-top:1rem;font-size:.78rem;opacity:.65}
           <h3>Elopements &amp; small ceremonies <span>— just as sacred</span></h3>
           <p>Marrying at a courthouse, in a backyard, or with ten guests instead of two hundred? A small studio is built for small weddings. Reach out and we'll shape coverage around it.</p>
           <span class="tag">Intimate Coverage</span>
+          <br>
+          <img class="moment-photo" src="https://images.unsplash.com/photo-1617724975854-70b5d0cedb0a?fm=jpg&q=60&w=3000&auto=format&fit=crop" alt="Small intimate wedding ceremony details">
         </div>
       </li>
     </ol>
