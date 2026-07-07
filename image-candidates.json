@@ -1,0 +1,29 @@
+{
+  "candidates": [
+    {
+      "url": "https://images.unsplash.com/photo-1532712938310-34cb3982ef74?fm=jpg&q=60&w=3000&auto=format&fit=crop",
+      "alt": "Bride and groom walking on a hill"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1537633552985-df8429e8048b?fm=jpg&q=60&w=3000&auto=format&fit=crop",
+      "alt": "Newly wedded couple standing on shore during daytime"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1617724975854-70b5d0cedb0a?fm=jpg&q=60&w=3000&auto=format&fit=crop",
+      "alt": "Bride and groom walking on the beach"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1611550287705-7ff8b459c8eb?fm=jpg&q=60&w=3000&auto=format&fit=crop",
+      "alt": "Wedding photographer holding black Nikon DSLR camera"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1654553051254-45493cd4daf3?fm=jpg&q=60&w=3000&auto=format&fit=crop",
+      "alt": "Bride and groom holding hands at a wedding"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1503525443530-339273ca8a86?fm=jpg&q=60&w=3000&auto=format&fit=crop",
+      "alt": "Wedding couple inside room"
+    }
+  ],
+  "source": "ai_search"
+}
